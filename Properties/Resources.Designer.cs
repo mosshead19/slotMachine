@@ -63,6 +63,16 @@ namespace slotMachine.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap _81037742d756addf44bc01782bd808ce {
+            get {
+                object obj = ResourceManager.GetObject("81037742d756addf44bc01782bd808ce", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap animal1 {
             get {
                 object obj = ResourceManager.GetObject("animal1", resourceCulture);
@@ -123,6 +133,66 @@ namespace slotMachine.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap b188ddac10ec79870d30d465a141fede {
+            get {
+                object obj = ResourceManager.GetObject("b188ddac10ec79870d30d465a141fede", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap bb34017e0cd6eeaff3e785b60a8ff59f {
+            get {
+                object obj = ResourceManager.GetObject("bb34017e0cd6eeaff3e785b60a8ff59f", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap bv {
+            get {
+                object obj = ResourceManager.GetObject("bv", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap bvss {
+            get {
+                object obj = ResourceManager.GetObject("bvss", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap bvx {
+            get {
+                object obj = ResourceManager.GetObject("bvx", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap f61761167f42fb1b8e11927bf2261a71 {
+            get {
+                object obj = ResourceManager.GetObject("f61761167f42fb1b8e11927bf2261a71", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap fruit1 {
             get {
                 object obj = ResourceManager.GetObject("fruit1", resourceCulture);
@@ -176,6 +246,16 @@ namespace slotMachine.Properties {
         internal static System.Drawing.Bitmap fruit6 {
             get {
                 object obj = ResourceManager.GetObject("fruit6", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap ggg {
+            get {
+                object obj = ResourceManager.GetObject("ggg", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }

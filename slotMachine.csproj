@@ -150,5 +150,29 @@
   <ItemGroup>
     <None Include="Resources\fruit1.jpg" />
   </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\ggg.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\81037742d756addf44bc01782bd808ce.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\bb34017e0cd6eeaff3e785b60a8ff59f.gif" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\b188ddac10ec79870d30d465a141fede.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\f61761167f42fb1b8e11927bf2261a71.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\bv.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\bvss.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\bvx.jpg" />
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

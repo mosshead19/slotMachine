@@ -37,26 +37,33 @@
             // 
             // txtName
             // 
-            this.txtName.Location = new System.Drawing.Point(260, 128);
+            this.txtName.BackColor = System.Drawing.Color.Cornsilk;
+            this.txtName.Location = new System.Drawing.Point(192, 84);
+            this.txtName.Margin = new System.Windows.Forms.Padding(2);
             this.txtName.Name = "txtName";
-            this.txtName.Size = new System.Drawing.Size(100, 22);
+            this.txtName.Size = new System.Drawing.Size(93, 20);
             this.txtName.TabIndex = 0;
             this.txtName.TextChanged += new System.EventHandler(this.txtName_TextChanged);
             // 
             // cmbThemes
             // 
+            this.cmbThemes.BackColor = System.Drawing.Color.Cornsilk;
             this.cmbThemes.FormattingEnabled = true;
-            this.cmbThemes.Location = new System.Drawing.Point(241, 187);
+            this.cmbThemes.Location = new System.Drawing.Point(192, 127);
+            this.cmbThemes.Margin = new System.Windows.Forms.Padding(2);
             this.cmbThemes.Name = "cmbThemes";
-            this.cmbThemes.Size = new System.Drawing.Size(137, 24);
+            this.cmbThemes.Size = new System.Drawing.Size(93, 21);
             this.cmbThemes.TabIndex = 1;
             this.cmbThemes.SelectedIndexChanged += new System.EventHandler(this.cmbTheme_SelectedIndexChanged);
             // 
             // btnPlay
             // 
-            this.btnPlay.Location = new System.Drawing.Point(273, 259);
+            this.btnPlay.FlatStyle = System.Windows.Forms.FlatStyle.System;
+            this.btnPlay.Font = new System.Drawing.Font("MS Gothic", 24F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnPlay.Location = new System.Drawing.Point(160, 163);
+            this.btnPlay.Margin = new System.Windows.Forms.Padding(2);
             this.btnPlay.Name = "btnPlay";
-            this.btnPlay.Size = new System.Drawing.Size(75, 23);
+            this.btnPlay.Size = new System.Drawing.Size(152, 63);
             this.btnPlay.TabIndex = 2;
             this.btnPlay.Text = "PLAY";
             this.btnPlay.UseVisualStyleBackColor = true;
@@ -65,31 +72,40 @@
             // lblIntro
             // 
             this.lblIntro.AutoSize = true;
-            this.lblIntro.Location = new System.Drawing.Point(221, 66);
+            this.lblIntro.BackColor = System.Drawing.Color.Transparent;
+            this.lblIntro.Font = new System.Drawing.Font("MS Gothic", 21.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblIntro.Location = new System.Drawing.Point(155, 281);
+            this.lblIntro.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.lblIntro.Name = "lblIntro";
-            this.lblIntro.Size = new System.Drawing.Size(199, 16);
+            this.lblIntro.Size = new System.Drawing.Size(397, 29);
             this.lblIntro.TabIndex = 3;
-            this.lblIntro.Text = "WELCOME TO SLOT MACHINE";
+            this.lblIntro.Text = "WELCOME TO SLOT MACHINE!";
             // 
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(257, 109);
+            this.label1.BackColor = System.Drawing.Color.Transparent;
+            this.label1.Font = new System.Drawing.Font("MS Gothic", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label1.Location = new System.Drawing.Point(190, 70);
+            this.label1.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(104, 16);
+            this.label1.Size = new System.Drawing.Size(95, 12);
             this.label1.TabIndex = 4;
-            this.label1.Text = "Enter username:";
+            this.label1.Text = "Enter Username:";
             // 
             // IntroForm
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(800, 450);
+            this.BackgroundImage = global::slotMachine.Properties.Resources._81037742d756addf44bc01782bd808ce;
+            this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.ClientSize = new System.Drawing.Size(600, 366);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.lblIntro);
             this.Controls.Add(this.btnPlay);
             this.Controls.Add(this.cmbThemes);
             this.Controls.Add(this.txtName);
+            this.Margin = new System.Windows.Forms.Padding(2);
             this.Name = "IntroForm";
             this.Text = "IntroForm";
             this.Load += new System.EventHandler(this.IntroForm_Load);

@@ -61,16 +61,63 @@ namespace SlotMachine.Models
             }
         }
 
-        public void Spin()
-            {
-                // Randomly select an index for the symbol
-                symbolIndex = random.Next(theme.Symbols.Length);
-                symbol = theme.Symbols[symbolIndex]; // Get the corresponding image for the new index
+        public void Spin(Reel[] otherReels, int outcomeScenario)
+        {
+            int newSymbolIndex;
 
-                // Trigger repaint to show the new symbol
-                pictureBox.Invalidate(); // Force a repaint so that the new symbol is displayed
+            switch (outcomeScenario)
+            {
+                case 1: // Loss (40% chance)
+                    // Make this reel likely to have a unique symbol
+                    do
+                    {
+                        newSymbolIndex = random.Next(theme.Symbols.Length);
+                    } while (IsMatchingSymbolAcrossReels(newSymbolIndex, otherReels));
+                    break;
+
+                case 2: // 2 Matches (30% chance)
+                    // Make this reel likely to match with one other reel
+                    newSymbolIndex = random.Next(theme.Symbols.Length);
+                    int matchReelIndex = random.Next(otherReels.Length);
+                    while (otherReels[matchReelIndex].symbolIndex == newSymbolIndex)
+                    {
+                        newSymbolIndex = random.Next(theme.Symbols.Length);
+                    }
+                    break;
+
+                case 3: // Jackpot (20% chance)
+                    // All reels match the same symbol
+                    newSymbolIndex = random.Next(theme.Symbols.Length);
+                    break;
+
+                default:
+                    newSymbolIndex = random.Next(theme.Symbols.Length); // Fallback to random selection
+                    break;
             }
 
-        
-    }
+            // Set the new symbol for this reel
+            symbolIndex = newSymbolIndex;
+            symbol = theme.Symbols[symbolIndex];
+
+            // Trigger repaint to show the new symbol
+            pictureBox.Invalidate(); // Force a repaint so that the new symbol is displayed
+        }
+
+        private bool IsMatchingSymbolAcrossReels(int newSymbolIndex, Reel[] otherReels)
+        {
+            // Check if the new symbol matches any other reel's current symbol
+            foreach (var reel in otherReels)
+            {
+                if (reel.symbolIndex == newSymbolIndex)
+                {
+                    return true; // A match was found, so we will retry selecting a different symbol
+                }
+            }
+
+            // No match was found, the symbol is unique
+            return false;
+        }
+
+
+        }
 }

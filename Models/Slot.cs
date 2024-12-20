@@ -37,34 +37,63 @@ namespace SlotMachine.Models
 
         public void Spin()
         {
-            // Spin each reel
-            foreach (var reel in reels)
+            // Simulate the outcome based on probability distribution
+            int outcomeScenario = GetOutcomeScenario();
+
+            // Spin each reel, passing the outcome scenario to influence symbol selection
+            for (int i = 0; i < reels.Length; i++)
             {
-                reel.Spin();
+                // Pass the other reels to each reel's Spin method
+                Reel[] otherReels = reels.Where((r, index) => index != i).ToArray();
+                reels[i].Spin(otherReels, outcomeScenario);
             }
         }
 
-        public (int, int) CheckResult()
+        private int GetOutcomeScenario()
+        {
+            // Randomly choose an outcome scenario based on desired probabilities
+            var random= new Random();
+            int roll = random.Next(100);
+            if (roll < 40) // 40% chance of loss
+            {
+                return 1; // Loss
+            }
+            else if (roll < 70) // 30% chance of 2 matches
+            {
+                return 2; // 2 Matches
+            }
+            else // 20% chance of jackpot
+            {
+                return 3; // Jackpot
+            }
+        }
+
+
+
+        public int CheckResult()
         {
             int winnings = 0;
-            int multiplier = 0;
+            //int multiplier = 0;
 
             // Compare the symbol indices to check for matches
             if (reels[0].SymbolIndex == reels[1].SymbolIndex && reels[1].SymbolIndex == reels[2].SymbolIndex)
             {
-                multiplier = 10; // Jackpot multiplier
-                winnings = stake * multiplier;
+                //multiplier = 10; // Jackpot multiplier
+                //winnings = stake * multiplier;
+                winnings = stake * 10;
             }
             // Check if two symbols match (partial match)
-            else if (reels[0].SymbolIndex == reels[1].SymbolIndex ||
-                     reels[1].SymbolIndex == reels[2].SymbolIndex ||
-                     reels[0].SymbolIndex == reels[2].SymbolIndex)
-            {
-                multiplier = 2; // Partial match multiplier
-                winnings = stake * multiplier;
-            }
+             else if (reels[0].SymbolIndex == reels[1].SymbolIndex ||
+                       reels[1].SymbolIndex == reels[2].SymbolIndex ||
+                       reels[0].SymbolIndex == reels[2].SymbolIndex)
+              {
+                // multiplier = 2; // Partial match multiplier
+                //winnings = stake * multiplier;
+                winnings = stake * 2;
+              }
+            else { winnings= 0; }
 
-            return (winnings, multiplier);
+            return (winnings);
         }
 
 

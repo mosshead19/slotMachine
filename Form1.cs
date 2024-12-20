@@ -66,26 +66,34 @@ namespace slotMachine
         {
             slotMachine.Spin();			// Spin the reels
 
-            if (DateTime.Now.Second % 2 == 0) 	// Stop spinning after 2 seconds
+            if (DateTime.Now.Second % 5 == 0) 	// Stop spinning after 2 seconds
             {
                 timerSpin.Stop();
                 btnSpin.Enabled = true;
 
                 // return multiplier so i could display the multiplier after the spin
-                var (wins,mltplyr) = slotMachine.CheckResult();
-                int winnings = wins;	// Check the result and update the UI accordingly
-                int multiplier = mltplyr;
+
+                //var (wins,mltplyr) = slotMachine.CheckResult();
+                int winnings = slotMachine.CheckResult();   // Check the result and update the UI accordingly
+                //int multiplier = mltplyr;
                 slotMachine.UpdateBalance(winnings);
 
                 // Update the result label
-                if (winnings > 0)
+                if (winnings ==stake*2)
                 {
-                    lblResult.Text = "🎉 WIN! You earned P" + winnings + " 🎉";
-                    lblResult.ForeColor = Color.Green;
+                    //lblResult.Text = "🎉 WIN! You earned P" + winnings + " 🎉";
+                    lblResult.Text = "WIN";
+                    lblResult.ForeColor = Color.HotPink;
+                }
+
+                else if(winnings== stake* 10)
+                {
+                    lblResult.Text = "JACKPOT";
+                    lblResult.ForeColor = Color.Gold;
                 }
                 else
                 {
-                    lblResult.Text = "No luck this time!";
+                    lblResult.Text = "LOSE";
                     lblResult.ForeColor = Color.Red;
                 }
 
@@ -159,6 +167,11 @@ namespace slotMachine
         }
 
         private void picBoxBackground_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void lblResult_TextChanged(object sender, EventArgs e)
         {
 
         }
