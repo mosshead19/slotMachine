@@ -37,7 +37,7 @@ namespace SlotMachine.Models
 
         public void Spin()
         {
-            // Simulate the outcome based on probability distribution
+            
             int outcomeScenario = GetOutcomeScenario();
 
             // Spin each reel, passing the outcome scenario to influence symbol selection
@@ -51,14 +51,14 @@ namespace SlotMachine.Models
 
         private int GetOutcomeScenario()
         {
-            // Randomly choose an outcome scenario based on desired probabilities
+            
             var random= new Random();
             int roll = random.Next(100);
             if (roll < 40) // 40% chance of loss
             {
                 return 1; // Loss
             }
-            else if (roll < 70) // 30% chance of 2 matches
+            else if (roll < 50) // 50% chance of 2 matches
             {
                 return 2; // 2 Matches
             }
